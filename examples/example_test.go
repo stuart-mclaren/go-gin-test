@@ -7,6 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	opentracing "github.com/opentracing/opentracing-go"
+	"github.com/stuart-mclaren/go-gin-test/nethttp"
 	jaeger "github.com/uber/jaeger-client-go"
 	"github.com/uber/jaeger-client-go/zipkin"
 )
@@ -28,7 +29,7 @@ func TestExample(t *testing.T) {
 	}
 
 	r := gin.New()
-	r.Use(Middleware(tracer))
+	r.Use(nethttp.Middleware(tracer))
 	group := r.Group("")
 	group.GET("", fn)
 	w := httptest.NewRecorder()
@@ -94,7 +95,7 @@ func TestExampleWithValues(t *testing.T) {
 	}
 
 	r := gin.New()
-	r.Use(Middleware(tracer))
+	r.Use(nethttp.Middleware(tracer))
 	group := r.Group("")
 	group.GET("", fn)
 
