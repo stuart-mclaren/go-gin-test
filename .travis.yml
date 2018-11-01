@@ -7,7 +7,6 @@ go:
   - tip
 
 install:
-  - go get golang.org/x/lint/golint
   - go get golang.org/x/tools/cmd/goimports
   - go get github.com/gin-gonic/gin
   - go get github.com/opentracing/opentracing-go
@@ -16,5 +15,4 @@ install:
 
 script:
   - test -z $(goimports -l nethttp)
-  - golint -set_exit_status ./...
   - go test -v -cover -race ./...
