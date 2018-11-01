@@ -6,7 +6,7 @@
 // It removes the need for the additional complexity of using a middleware
 // adapter.
 
-package nethttp
+package ginhttp
 
 import (
 	"net/http"

@@ -1,4 +1,4 @@
-package nethttp
+package example
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	opentracing "github.com/opentracing/opentracing-go"
-	"github.com/stuart-mclaren/go-gin-test/nethttp"
+	"github.com/stuart-mclaren/go-gin-test/ginhttp"
 	jaeger "github.com/uber/jaeger-client-go"
 	"github.com/uber/jaeger-client-go/zipkin"
 )
@@ -29,7 +29,7 @@ func TestExample(t *testing.T) {
 	}
 
 	r := gin.New()
-	r.Use(nethttp.Middleware(tracer))
+	r.Use(ginhttp.Middleware(tracer))
 	group := r.Group("")
 	group.GET("", fn)
 	w := httptest.NewRecorder()
@@ -95,7 +95,7 @@ func TestExampleWithValues(t *testing.T) {
 	}
 
 	r := gin.New()
-	r.Use(nethttp.Middleware(tracer))
+	r.Use(ginhttp.Middleware(tracer))
 	group := r.Group("")
 	group.GET("", fn)
 

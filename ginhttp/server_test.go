@@ -1,4 +1,4 @@
-package nethttp
+package ginhttp
 
 import (
 	"net/http"
