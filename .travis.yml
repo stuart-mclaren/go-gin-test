@@ -6,8 +6,10 @@ go:
   - 1.9.x
   - tip
 
-before_install:
+install:
   - go get golang.org/x/tools/cmd/goimports
+  - go get github.com/gin-gonic/gin
+  - go get github.com/opentracing/opentracing-go
   - go get github.com/uber/jaeger-client-go
   - go get github.com/uber/jaeger-client-go/zipkin
 
