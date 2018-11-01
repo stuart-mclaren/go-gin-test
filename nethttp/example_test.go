@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	jaeger "github.com/jaegertracing/jaeger-client-go"
-	"github.com/jaegertracing/jaeger-client-go/zipkin"
 	opentracing "github.com/opentracing/opentracing-go"
+	jaeger "github.com/uber/jaeger-client-go"
+	"github.com/uber/jaeger-client-go/zipkin"
 )
 
 func TestExample(t *testing.T) {
