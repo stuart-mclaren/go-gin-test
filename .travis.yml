@@ -11,8 +11,8 @@ install:
   - go get golang.org/x/tools/cmd/goimports
   - go get github.com/gin-gonic/gin
   - go get github.com/opentracing/opentracing-go
-  - github.com/uber/jaeger-client-go
-  - github.com/uber/jaeger-client-go/zipkin
+  - go get github.com/jaegertracing/jaeger-client-go
+  - go get github.com/jaegertracing/jaeger-client-go/zipkin
 
 script:
   - test -z $(goimports -l nethttp)
